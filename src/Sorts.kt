@@ -12,4 +12,13 @@ class Sorts() {
         return arr
     }
 
+    fun quickSort(arr: IntArray): IntArray {
+        if (arr.size < 2) return arr
+        val pivot = arr[arr.size / 2]
+        val less = arr.filter { it < pivot }.toIntArray()
+        val equal = arr.filter { it == pivot }.toIntArray()
+        val greater = arr.filter { it > pivot }.toIntArray()
+        return quickSort(less) + equal + quickSort(greater)
+    }
+
 }
