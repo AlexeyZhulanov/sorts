@@ -1,11 +1,23 @@
+fun checkString(input: String) {
+    val alf = '0'..'9'
+    var isValid = true
+
+    input.forEach { char ->
+        if (char !in alf) {
+            isValid = false
+        }
+    }
+
+    if (isValid) {
+        println("Успех: Строка содержит только цифры.")
+    } else {
+        println("Ошибка: Строка содержит недопустимые символы.")
+    }
+}
+
 fun main() {
-    // Task 2
-    var a = 8
-    var b = 10
-
-    a = a + b // a = 18
-    b = a - b // b = 8
-    a = a - b // a = 10
-
-    println("a: $a, b: $b") // a: 10, b: 8
+    // Task 3
+    checkString("12345")  // Успех: Строка содержит только цифры.
+    checkString("123a5")  // Ошибка: Строка содержит недопустимые символы.
+    checkString("987654") // Успех: Строка содержит только цифры.
 }
