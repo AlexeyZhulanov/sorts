@@ -20,11 +20,19 @@ class SortingTests {
     }
 
     @Test
+    fun testBubbleSort() {
+        val input = intArrayOf(5, 2, 9, 1, 5, 6)
+        val expected = intArrayOf(1, 2, 5, 5, 6, 9)
+        assertArrayEquals(expected, sorts.bubbleSort(input))
+    }
+
+    @Test
     fun testSortingWithNegativeNumbers() {
         val input = intArrayOf(-3, -1, -4, 2, 0, 1)
         val expected = intArrayOf(-4, -3, -1, 0, 1, 2)
         assertArrayEquals(expected, sorts.insertionSort(input))
         assertArrayEquals(expected, sorts.quickSort(input))
+        assertArrayEquals(expected, sorts.bubbleSort(input))
     }
 
     @Test
@@ -32,5 +40,6 @@ class SortingTests {
         val input = intArrayOf(1, 2, 3, 4, 5)
         assertArrayEquals(input, sorts.insertionSort(input.clone()))
         assertArrayEquals(input, sorts.quickSort(input.clone()))
+        assertArrayEquals(input, sorts.bubbleSort(input.clone()))
     }
 }

@@ -21,4 +21,18 @@ class Sorts() {
         return quickSort(less) + equal + quickSort(greater)
     }
 
+    fun bubbleSort(arr: IntArray): IntArray {
+        val n = arr.size
+        for (i in 0..<n) {
+            for (j in 0..<n - i - 1) {
+                if (arr[j] > arr[j + 1]) {
+                    val temp = arr[j]
+                    arr[j] = arr[j + 1]
+                    arr[j + 1] = temp
+                }
+            }
+        }
+        return arr
+    }
+
 }
